@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Project Edge v9</title>
+<title>Project Edge v10</title>
 <style>
 :root{--bg:#090d13;--card:#141922;--card2:#10151d;--line:#2d3542;--text:#f4f7fb;--muted:#91a0b5;--blue:#62a8ff;--green:#25a45a;--red:#e0524d;--yellow:#d8a53a;--purple:#a78bfa}
 *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at top left,#172033,#090d13 45%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
@@ -18,13 +18,13 @@ textarea{min-height:95px;resize:vertical}.checks label{display:flex;gap:10px;ali
 .big{font-size:40px;font-weight:950;margin:10px 0}.hidden{display:none}.kpi{font-size:30px;font-weight:950}
 table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;font-size:14px;vertical-align:top}th{color:#d4dbe7}
 .meter{height:22px;background:#090d13;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:10px 0}.fill{height:100%;width:0%;background:linear-gradient(90deg,#e0524d,#d8a53a,#25a45a)}
-.preview{max-width:170px;max-height:120px;border-radius:10px;border:1px solid var(--line);display:block;margin-top:8px}.legendItem{border-left:4px solid var(--blue);padding:12px 14px;background:#0c1118;border-radius:12px;margin:12px 0}.stars{letter-spacing:2px;color:#ffd166;font-weight:900}.rank{font-size:24px;font-weight:950}.module{min-height:150px}.homeTitle{font-size:38px;margin-bottom:6px}.quote{font-size:18px;color:#d4dbe7}.mini{font-size:13px;color:var(--muted)}
+.preview{max-width:170px;max-height:120px;border-radius:10px;border:1px solid var(--line);display:block;margin-top:8px}.legendItem{border-left:4px solid var(--blue);padding:12px 14px;background:#0c1118;border-radius:12px;margin:12px 0}.stars{letter-spacing:2px;color:#ffd166;font-weight:900}.rank{font-size:24px;font-weight:950}.module{min-height:150px}.homeTitle{font-size:38px;margin-bottom:6px}.quote{font-size:18px;color:#d4dbe7}.mini{font-size:13px;color:var(--muted)}.mgmt{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tag{padding:5px 8px;border-radius:999px;background:#2d3542;color:#d4dbe7;font-size:12px;font-weight:800}.tag.on{background:#123f25;color:#bdf7d2}.timeline{font-size:13px;line-height:1.7;margin-top:8px;color:#d4dbe7}.done{color:#7ee787;font-weight:900}
 @media(max-width:900px){.app{grid-template-columns:1fr}aside{position:relative;height:auto}.grid,.tfgrid{grid-template-columns:1fr}main{padding:14px}}
 </style>
 </head>
 <body>
 <div class="app">
-<aside><div class="brand">Project Edge</div><div class="sub">v9 · DCA & Swing</div><nav>
+<aside><div class="brand">Project Edge</div><div class="sub">v10 · Trade Management</div><nav>
 <button class="active" onclick="show('home',this)">🏠 Home</button>
 <button onclick="show('check',this)">🧠 Trade Commander</button>
 <button onclick="show('live',this)">📈 Live Trades</button>
@@ -155,6 +155,7 @@ table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border-bottom:1p
 <div class="legendItem"><h3>BC-Bereich</h3><p><b>Arbeitsdefinition:</b> Bereich innerhalb deiner Sequenz, den du als Ziel- oder Reaktionszone nutzt. Wird mit deinen Beispielen weiter geschärft.</p></div>
 <div class="legendItem"><h3>Sequenz gebrochen</h3><p><b>Definition:</b> Das letzte relevante Higher Low oder Lower High wurde gebrochen.</p><p><b>Trader-Aktion:</b> Setup ist erstmal beendet. Kein Schönreden.</p></div>
 <div class="legendItem"><h3>Korrektiv als Kontext-Auswahl</h3><p><b>Definition:</b> Der Timeframe ist nicht klar bullisch oder bärisch, sondern befindet sich in einer Gegenbewegung / Konsolidierung.</p><p><b>Beispiel:</b> ETH Weekly kann korrektiv sein, obwohl kurzfristig 4H bullisch ist.</p><p><b>Project Edge:</b> Korrektiv gibt weniger Gewicht als bullisch/bärisch und wird vorsichtiger bewertet.</p></div>
+<div class="legendItem"><h3>Trade Management</h3><p><b>SL auf BE:</b> Stop-Loss wurde auf Break Even gezogen. Ziel: Risiko aus dem Trade nehmen.</p><p><b>Teilgewinn:</b> Ein Teil der Position wurde realisiert. Project Edge reduziert die Restposition optisch.</p><p><b>Warum wichtig:</b> Laufende Trades brauchen Management-Regeln, nicht nur Einstiegsideen.</p></div>
 <div class="legendItem"><h3>Trade-Art</h3><p><b>Einzel-Level:</b> ein geplanter Einstieg an einem Level.</p><p><b>DCA-Trade:</b> mehrere geplante Einstiege vor dem Stop-Loss. Project Edge berechnet den Mittelwert.</p><p><b>Long/Short Swing:</b> größerer Trade mit längerem Horizont. DCA ist dabei oft sinnvoll, aber Risiko muss über alle Orders zusammen passen.</p></div>
 <div class="legendItem"><h3>DCA-Mittelwert</h3><p><b>Definition:</b> Durchschnittlicher Einstieg aus mehreren Orders.</p><p><b>Formel:</b> (Preis1 × Size1 + Preis2 × Size2 + …) / gesamte Size.</p><p><b>Wichtig:</b> Der Stop-Loss muss auf den durchschnittlichen Einstieg und die Gesamtposition gerechnet werden, nicht nur auf die erste Order.</p></div>
 <div class="legendItem"><h3>🎯 Einstieg-Timeframe</h3><p><b>Definition:</b> Der Timeframe, auf dem du dein Setup suchst, deinen Einstieg planst und den Trade führst.</p><p><b>Regel:</b> Wenn du 15m auswählst, bewertet Project Edge den Trade aus Sicht eines 15-Minuten-Trades. Höhere Timeframes sind nur Kontext.</p><p><b>Warum wichtig:</b> So springst du nicht unbewusst zwischen Timeframes hin und her.</p></div>
@@ -197,7 +198,7 @@ table{width:100%;border-collapse:collapse;margin-top:10px}th,td{border-bottom:1p
 <section id="knowledge" class="hidden"><h2>Wissensdatenbank</h2><div class="card"><p>Hier sammeln wir später deine Beispiele und Screenshots zu jedem Begriff.</p></div></section>
 <section id="routine" class="hidden"><h2>Daily Routine</h2><div class="card checks"><label><input type="checkbox"> BTC/ETH Kontext geprüft oder bewusst ausgelassen</label><label><input type="checkbox"> Topcoins gescannt</label><label><input type="checkbox"> Maximal 3 Trades-Regel bewusst</label><label><input type="checkbox"> Kein FOMO / kein Langeweile-Trade</label></div></section>
 <section id="backtest" class="hidden"><h2>Backtesting</h2><div class="card"><p>Vorbereitet. Später testen wir Setups ohne Echtgeld: Screenshot, Setup-Typ, Entscheidung, Ergebnis in R.</p></div></section>
-<section id="changelog" class="hidden"><h2>Changelog</h2><div class="card"><h3>v9</h3><p>Trade-Art ergänzt: Einzel-Level, DCA-Trade, Long Swing, Short Swing. DCA-Rechner mit bis zu 3 Orders eingebaut. Durchschnittlicher Einstieg fließt in Positionsgröße und RR ein.</p><h3>v8</h3><p>Trade-Timeframe wurde zu 🎯 Einstieg-Timeframe. Kontext-Timeframes passen sich dynamisch an den Einstieg an. Bewertung erklärt jetzt automatisch, aus welcher Timeframe-Sicht geprüft wird.</p><h3>v7</h3><p>Option „korrektiv“ in Kontext/Timeframes ergänzt. Reiter Beispielbilder vorbereitet. GitHub-Anleitung eingebaut.</p><h3>v6</h3><p>Ersetzt Aggressivität durch Setupqualität, Vertrauenslevel und empfohlenes Risiko. Risiko bis 5 %. BTC/ETH jetzt Multi-Timeframe. Marktphase getrennt von Strukturqualität. Legende massiv erweitert.</p></div></section>
+<section id="changelog" class="hidden"><h2>Changelog</h2><div class="card"><h3>v10</h3><p>Trade-Management verbessert: SL auf BE und Teilgewinne werden sichtbar gespeichert, Buttons ändern ihren Status, Management-Zeitleiste und Restposition ergänzt.</p><h3>v9</h3><p>Trade-Art ergänzt: Einzel-Level, DCA-Trade, Long Swing, Short Swing. DCA-Rechner mit bis zu 3 Orders eingebaut. Durchschnittlicher Einstieg fließt in Positionsgröße und RR ein.</p><h3>v8</h3><p>Trade-Timeframe wurde zu 🎯 Einstieg-Timeframe. Kontext-Timeframes passen sich dynamisch an den Einstieg an. Bewertung erklärt jetzt automatisch, aus welcher Timeframe-Sicht geprüft wird.</p><h3>v7</h3><p>Option „korrektiv“ in Kontext/Timeframes ergänzt. Reiter Beispielbilder vorbereitet. GitHub-Anleitung eingebaut.</p><h3>v6</h3><p>Ersetzt Aggressivität durch Setupqualität, Vertrauenslevel und empfohlenes Risiko. Risiko bis 5 %. BTC/ETH jetzt Multi-Timeframe. Marktphase getrennt von Strukturqualität. Legende massiv erweitert.</p></div></section>
 <section id="backup" class="hidden"><h2>Backup</h2><div class="card"><button class="btn secondary" onclick="exportData()">Backup exportieren</button><label style="margin-top:12px">Backup importieren</label><input type="file" accept=".json,application/json" onchange="importData(event)"><button class="btn danger" onclick="clearAll()">Alles löschen</button></div></section>
 
 </main></div>
@@ -305,12 +306,44 @@ return lastCheck
 }
 function startTrade(){const check=calc(); if(check.allowed==="Nein"&&!confirm("Project Edge sagt: kein Trade. Trotzdem als Regelbruch speichern?"))return; const trade={id:Date.now(),date:new Date().toLocaleString("de-DE"),coin:val("coin")||"Unbenannt",direction:val("direction"),tradeType:val("tradeType"),tf:val("tf"),dca:dcaAverage(),phase:val("phase"),structure:val("structure"),sk:val("sk"),orderflow:val("orderflow"),entry:val("entry"),stop:val("stop"),take:val("take"),account:val("account"),note:val("preNote"),shot:shotData,status:"open",resultR:"",postNote:"",be:false,partial:false,...check}; trades.unshift(trade); save(); alert("Trade gespeichert."); render()}
 function save(){localStorage.setItem("project_edge_v6",JSON.stringify(trades))}
-function mark(id,field){const t=trades.find(x=>x.id===id); if(!t)return; t[field]=true; save(); render()}
+function mark(id,field){
+ const t=trades.find(x=>x.id===id); if(!t)return;
+ if(field==='be'){
+   t.be=true; t.beAt=new Date().toLocaleString("de-DE");
+ }
+ if(field==='partial'){
+   t.partial=true; t.partialAt=new Date().toLocaleString("de-DE");
+   const pct=prompt("Wie viel Teilgewinn realisiert? z.B. 33 für 33%", t.partialPct || "33");
+   if(pct!==null && pct!=="") t.partialPct=pct;
+ }
+ save(); render();
+}
 function closeTrade(id){const t=trades.find(x=>x.id===id); if(!t)return; const res=prompt("Ergebnis in R, z.B. +2.1 oder -1:"); if(res===null)return; const note=prompt("Nachnotiz: Was war gut/schlecht?"); t.status="closed"; t.resultR=res; t.postNote=note||""; save(); render()}
 function delTrade(id){if(!confirm("Trade löschen?"))return; trades=trades.filter(t=>t.id!==id); save(); render()}
+
+function restPosition(t){
+  const p=parseFloat(String(t.partialPct||"0").replace(",","."));
+  if(t.partial && !isNaN(p)) return Math.max(0,100-p);
+  return 100;
+}
+function managementHtml(t){
+  return `<div class="mgmt">
+    <span class="tag on">Einstieg ✅</span>
+    <span class="tag ${t.be?'on':''}">SL BE ${t.be?'✅':'○'}</span>
+    <span class="tag ${t.partial?'on':''}">Teilgewinn ${t.partial?'✅':'○'}</span>
+    <span class="tag">Rest ${restPosition(t)}%</span>
+  </div>
+  <div class="timeline">
+    <div><span class="done">●</span> Trade eröffnet</div>
+    <div>${t.be?'<span class="done">●</span>':'○'} SL auf Break Even ${t.beAt?'<span class="mini">· '+t.beAt+'</span>':''}</div>
+    <div>${t.partial?'<span class="done">●</span>':'○'} Teilgewinn ${t.partialPct? t.partialPct+'%':''} ${t.partialAt?'<span class="mini">· '+t.partialAt+'</span>':''}</div>
+    <div>○ Finaler Exit offen</div>
+  </div>`;
+}
+
 function render(){const open=trades.filter(t=>t.status==="open"),closed=trades.filter(t=>t.status==="closed");
-document.getElementById("openTable").innerHTML=open.length?"<tr><th>Trade</th><th>Bewertung</th><th>Kontext</th><th>Screenshot</th><th>Aktionen</th></tr>"+open.map(t=>`<tr><td><b>${esc(t.coin)}</b> ${t.direction}<br>${t.tf} · ${t.tradeType||"Einzel-Level"} · ${t.date}<br>Entry ${t.entry||"-"} / SL ${t.stop||"-"} / TP ${t.take||"-"}${t.dca?`<br>DCA Ø ${Number(t.dca.avg).toFixed(4)}`:""}</td><td>${t.quality||"-"}% · ${t.setupRank||"-"}<br>${t.stars||""}<br>Risiko ${t.riskMode||"-"} / max ${t.recommendedRisk||0}%</td><td>BTC D ${t.context?.btcdaily||"-"} / W ${t.context?.btcweekly||"-"}<br>Coin D ${t.mtf?.d||"-"} / W ${t.mtf?.w||"-"}</td><td>${t.shot?`<img class="preview" src="${t.shot}">`:"-"}</td><td><button class="btn secondary" onclick="mark(${t.id},'be')">SL auf BE</button><button class="btn secondary" onclick="mark(${t.id},'partial')">Teilgewinn</button><button class="btn good" onclick="closeTrade(${t.id})">Schließen</button><button class="btn danger" onclick="delTrade(${t.id})">Löschen</button></td></tr>`).join(""):"<tr><td>Keine offenen Trades.</td></tr>";
-document.getElementById("journalTable").innerHTML=trades.length?"<tr><th>Datum</th><th>Trade</th><th>Status</th><th>Bewertung</th><th>Notizen</th><th></th></tr>"+trades.map(t=>`<tr><td>${t.date}</td><td><b>${esc(t.coin)}</b> ${t.direction}<br>${t.tf} · ${esc(t.sk)}</td><td>${t.status}${t.resultR?`<br>${t.resultR}R`:""}</td><td>${t.quality||"-"}%<br>${t.setupRank||"-"}<br>${t.riskMode||"-"}</td><td>${esc(t.note)}<br><span class="muted">${esc(t.postNote)}</span></td><td><button class="btn danger" onclick="delTrade(${t.id})">Löschen</button></td></tr>`).join(""):"<tr><td>Noch keine Trades gespeichert.</td></tr>";
+document.getElementById("openTable").innerHTML=open.length?"<tr><th>Trade</th><th>Bewertung</th><th>Kontext</th><th>Screenshot</th><th>Aktionen</th></tr>"+open.map(t=>`<tr><td><b>${esc(t.coin)}</b> ${t.direction}<br>${t.tf} · ${t.tradeType||"Einzel-Level"} · ${t.date}<br>Entry ${t.entry||"-"} / SL ${t.stop||"-"} / TP ${t.take||"-"}${t.dca?`<br>DCA Ø ${Number(t.dca.avg).toFixed(4)}`:""}</td><td>${t.quality||"-"}% · ${t.setupRank||"-"}<br>${t.stars||""}<br>Risiko ${t.riskMode||"-"} / max ${t.recommendedRisk||0}%<br>${managementHtml(t)}</td><td>BTC D ${t.context?.btcdaily||"-"} / W ${t.context?.btcweekly||"-"}<br>Coin D ${t.mtf?.d||"-"} / W ${t.mtf?.w||"-"}</td><td>${t.shot?`<img class="preview" src="${t.shot}">`:"-"}</td><td><button class="btn ${t.be?'good':'secondary'}" onclick="mark(${t.id},'be')">${t.be?'✅ SL BE':'SL auf BE'}</button><button class="btn ${t.partial?'good':'secondary'}" onclick="mark(${t.id},'partial')">${t.partial?'✅ Teilgewinn':'Teilgewinn'}</button><button class="btn good" onclick="closeTrade(${t.id})">Schließen</button><button class="btn danger" onclick="delTrade(${t.id})">Löschen</button></td></tr>`).join(""):"<tr><td>Keine offenen Trades.</td></tr>";
+document.getElementById("journalTable").innerHTML=trades.length?"<tr><th>Datum</th><th>Trade</th><th>Status</th><th>Bewertung</th><th>Notizen</th><th></th></tr>"+trades.map(t=>`<tr><td>${t.date}</td><td><b>${esc(t.coin)}</b> ${t.direction}<br>${t.tf} · ${esc(t.sk)}</td><td>${t.status}${t.resultR?`<br>${t.resultR}R`:""}${t.be?`<br>SL BE ✅`:""}${t.partial?`<br>Teilgewinn ${t.partialPct||""}% ✅`:""}</td><td>${t.quality||"-"}%<br>${t.setupRank||"-"}<br>${t.riskMode||"-"}</td><td>${esc(t.note)}<br><span class="muted">${esc(t.postNote)}</span></td><td><button class="btn danger" onclick="delTrade(${t.id})">Löschen</button></td></tr>`).join(""):"<tr><td>Noch keine Trades gespeichert.</td></tr>";
 document.getElementById("sTotal").innerText=trades.length;document.getElementById("sOpen").innerText=open.length;document.getElementById("sClosed").innerText=closed.length;document.getElementById("sQuality").innerText=trades.length?Math.round(trades.reduce((a,t)=>a+(t.quality||0),0)/trades.length)+"%":"0%";
 let rsum=closed.reduce((a,t)=>a+(parseFloat(String(t.resultR).replace(",","."))||0),0);document.getElementById("analyticsBox").innerHTML=`<b>Auswertung</b><p>Geschlossene Trades: ${closed.length} · Summe Ergebnis: ${rsum.toFixed(2)}R</p>`}
 function exportData(){const blob=new Blob([JSON.stringify(trades,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="project_edge_backup_v6.json";a.click()}
